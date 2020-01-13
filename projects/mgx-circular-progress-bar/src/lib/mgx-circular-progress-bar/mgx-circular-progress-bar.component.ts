@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, HostBinding, ViewChild, ElementRef, TemplateRef, AfterViewChecked, AfterViewInit } from '@angular/core';
+import { Component, Input, OnChanges, ViewChild, ElementRef, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'mgx-circular-progress-bar',

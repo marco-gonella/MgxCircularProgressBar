@@ -1,11 +1,11 @@
-import { Component, Input, OnChanges, HostBinding, ViewChild, ElementRef, TemplateRef, AfterViewChecked, AfterViewInit } from '@angular/core';
+import { Component, Input, OnChanges, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'mgx-circular-progress-pie',
   template: `<div class="contain">
     <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" [ngStyle]="{'width.px': diameter, 'height.px': diameter }"
         viewBox="-1 -1 2 2">
-        <circle id="base-circle" [attr.stroke]="bgColor" [attr.fill]="bgColor" cx="0" cy="0" [attr.r]="radius / 20" />
+        <circle id="base-circle" [attr.stroke]="bgColor" [attr.fill]="bgColor" cx="0" cy="0" [attr.r]="bgSize / 20" />
         <path id="pie-path" [attr.fill]="color" [attr.d]="pathData" rotate="50"></path>
     </svg>
     <div class="label">
@@ -37,7 +37,7 @@ export class MgxCircularProgressPieComponent implements OnChanges {
   @Input() fontSize: number;
   @Input() color: string = '#3282b8';
   @Input() bgColor: string = '#eee';
-  @Input() radius: number = 10;
+  @Input() bgSize: number = 10;
   
   private mgxPrefix = 'mgx-circular-progress-pie';
   pathData: string;
