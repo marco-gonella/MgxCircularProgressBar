@@ -7,7 +7,7 @@ import { Component, Input, OnChanges, HostBinding, ViewChild, ElementRef, Templa
         viewBox="0 0 200 200">
         <circle id="base-circle" [attr.fill]="bgColor" stroke-width="15" cx="100" cy="100" [attr.r]="contentSize" />
         <circle id="path" #circlePath [attr.stroke]="color" fill="none" stroke-width="15" cx="100" cy="100"
-            [attr.r]="pathSize" rotate="50" />
+            [attr.r]="pathPosition" rotate="50" />
     </svg>
     <div class="label">
         <ng-container *ngIf="contentTemplate; else projectContent">
@@ -37,7 +37,7 @@ export class MgxCircularProgressFullBarComponent implements OnChanges {
   @Input() color: string = '#3282b8';
   @Input() bgColor: string = '#eee';
   @Input() contentSize: number = 83;
-  @Input() pathSize: number = 90;
+  @Input() pathPosition: number = 90;
   @ViewChild('circlePath') circlePath: ElementRef;
 
   private mgxPrefix = 'mgx-circular-progress-full-bar';
@@ -48,7 +48,7 @@ export class MgxCircularProgressFullBarComponent implements OnChanges {
 
   ngOnChanges() {
     const circle = this.circlePath.nativeElement;
-    const len = 2 * Math.PI * this.pathSize;
+    const len = 2 * Math.PI * this.pathPosition;
     circle.style.strokeDasharray = len;
 
     this.showWarnings();
