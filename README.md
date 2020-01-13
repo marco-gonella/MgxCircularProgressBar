@@ -7,7 +7,7 @@
 ### **Demo**
 this [Demo](https://stackblitz.com/edit/angular-79qrgc) has different combinations of progress bars, choose your favorite one!
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+![Demo img](demo-imgs/circular-progress-bar-demo.PNG)
 
 ## Development server
 
