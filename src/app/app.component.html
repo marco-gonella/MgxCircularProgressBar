@@ -1,20 +1,95 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<span class="main-title">
+    MGX Circular progress bars library
+</span>
 
+<div class="row">
+    <div class="slider-wrapper">
+        <span>Percentage for Full-Bar</span>
+        <input type="range" [(ngModel)]="percentageOne" min="0" max="100" step="0.1">
+        <button (click)="percentageOne=null">Reset</button>
+    </div>
+    <div class="bars-container">
+        <mgx-circular-progress-full-bar total="2000" barValue="780" [percentage]="percentageOne" color="#1b262c" #bar1>
+            <div class="custom-ratio" [style.background-color]="'#1b262c'">
+                {{bar1.percentual == 100 ? 'chose' : bar1.percentual}}
+            </div>
+        </mgx-circular-progress-full-bar>
+
+        <mgx-circular-progress-full-bar id="full-bar" total="2000" barValue="780" [percentage]="percentageOne"
+            color="#0f4c75">
+        </mgx-circular-progress-full-bar>
+
+        <mgx-circular-progress-full-bar class="white-label" total="2000" barValue="890" [percentage]="percentageOne"
+            color="#3282b8" bgColor="#34495e">
+        </mgx-circular-progress-full-bar>
+
+        <mgx-circular-progress-full-bar total="2000" barValue="1001" [percentage]="percentageOne" color="#bbe1fa"
+            pathSize="90" contentSize="72" fontSize="27">
+        </mgx-circular-progress-full-bar>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="slider-wrapper">
+        <span>Percentage for Pie</span>
+        <input type="range" [(ngModel)]="percentageTwo" min="0" max="100" step="0.1">
+        <button (click)="percentageTwo=null">Reset</button>
+    </div>
+    <div class="bars-container">
+        <mgx-circular-progress-pie total="2000" barValue="780" [percentage]="percentageTwo" color="#394a6d" #bar2>
+            <div class="custom-ratio" [style.background-color]="'#394a6d'">
+                {{bar2.percentual == 100 ? 'your' : bar2.percentual}}
+            </div>
+        </mgx-circular-progress-pie>
+
+        <mgx-circular-progress-pie id="pie" total="2000" barValue="780" [percentage]="percentageTwo" color="#24c3c0">
+        </mgx-circular-progress-pie>
+
+        <mgx-circular-progress-pie class="white-label" total="2000" barValue="890" [percentage]="percentageTwo"
+            color="#52de97" bgColor="#34495e">
+        </mgx-circular-progress-pie>
+
+        <mgx-circular-progress-pie total="2000" barValue="1001" [percentage]="percentageTwo" color="#c0ffb3" radius="5"
+            fontSize="27">
+        </mgx-circular-progress-pie>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="slider-wrapper">
+        <span>Percentage for Bar</span>
+        <input type="range" [(ngModel)]="percentageThree" min="0" max="100" step="0.1">
+        <button (click)="percentageThree=null">Reset</button>
+    </div>
+
+    <div class="bars-container">
+        <mgx-circular-progress-bar total="2000" barValue="780" [percentage]="percentageThree" color="#3e206d"
+            [contentTemplate]="styleTpl">
+
+        </mgx-circular-progress-bar>
+
+        <ng-template #styleTpl let-percentual="percentual">
+            <div class="custom-ratio" [style.background-color]="'#3e206d'">
+                {{percentual == 100 ? 'Style!' : percentual}}
+            </div>
+        </ng-template>
+
+        <mgx-circular-progress-bar id="bar" total="2000" barValue="780" [percentage]="percentageThree" color="#916dd5">
+        </mgx-circular-progress-bar>
+
+        <mgx-circular-progress-bar total="2000" barValue="890" [percentage]="percentageThree" color="#d89cf6"
+            bgColor="#34495e">
+        </mgx-circular-progress-bar>
+
+        <mgx-circular-progress-bar total="2000" barValue="1001" [percentage]="percentageThree" color="#f0e3ff"
+            fontSize="27">
+        </mgx-circular-progress-bar>
+    </div>
+</div>
+
+<div class="row sign">
+    <div>By Gonella Marco</div>
+</div>

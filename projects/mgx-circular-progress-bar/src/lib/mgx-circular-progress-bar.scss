@@ -1,0 +1,48 @@
+$font-family: Kreon VariableFont !default;
+$label-color: #7f8c8d !default;
+
+.contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#path {
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    transform-origin: center center;
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    -moz-transform-origin: center center;
+    transition: stroke-dashoffset .3s ease-in-out;
+    -webkit-transition: stroke-dashoffset .3s ease-in-out;
+    -ms-transition: stroke-dashoffset .3s ease-in-out;
+    -moz-transition: stroke-dashoffset .3s ease-in-out;
+
+}
+
+#pie-path {
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+}
+
+.label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-family;
+    color: $label-color;
+}

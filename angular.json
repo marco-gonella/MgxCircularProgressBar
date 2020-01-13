@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "MgxCircularProgressBar": {
+      "root": "projects/mgx-circular-progress-bar",
+      "sourceRoot": "projects/mgx-circular-progress-bar/src",
+      "projectType": "library",
+      "prefix": "mgx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mgx-circular-progress-bar/tsconfig.lib.json",
+            "project": "projects/mgx-circular-progress-bar/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/mgx-circular-progress-bar/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mgx-circular-progress-bar/src/test.ts",
+            "tsConfig": "projects/mgx-circular-progress-bar/tsconfig.spec.json",
+            "karmaConfig": "projects/mgx-circular-progress-bar/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mgx-circular-progress-bar/tsconfig.lib.json",
+              "projects/mgx-circular-progress-bar/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "MgxCircularProgressBarLibrary"

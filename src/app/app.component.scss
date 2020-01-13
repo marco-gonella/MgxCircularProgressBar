@@ -1,0 +1,84 @@
+.row {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-bottom: 35px;
+    font-family: sans-serif;
+
+    &.sign {
+        justify-content: flex-end;
+        font-style: italic;
+        font-weight: 700;
+    }
+
+    .slider-wrapper {
+        display: flex;
+        padding-right: 30px;
+        align-items: center;
+        border-right: 3px solid #ddd;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+        font-weight: bold;
+        width: 180px;
+
+        input {
+            width: 150px;
+            height: 20px;
+            margin: 0;
+        }
+    }
+
+    .bars-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        flex: 1;
+    }
+}
+
+.main-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-style: oblique;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.params {
+    display: flex;
+    justify-content: space-around;
+
+    &>div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+//Custom css for internal template
+.custom-ratio {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//Custom css override
+::ng-deep .white-label {
+    .label {
+        color: white !important;
+    }
+}
